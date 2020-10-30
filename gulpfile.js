@@ -49,7 +49,7 @@ done();
 function serve(done) {
 browserSync.init({
     server: {
-    baseDir: './'
+    baseDir: './dist/'
     }
 });
 done();
