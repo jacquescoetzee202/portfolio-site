@@ -10,11 +10,11 @@ let concat = require('gulp-concat');
 gulp.task('concat-js' , () => {
     return gulp.src('src/js/*.js')
         .pipe(concat('app.js'))
-        .pipe(gulp.dest('src/js/'));
+        .pipe(gulp.dest('dist/js/'));
 });
 
 gulp.task('uglify-js' , () => {
-    return gulp.src('src/js/app.js')
+    return gulp.src('dist/js/app.js')
     .pipe(uglify())
     .pipe(rename('app.min.js'))
     .pipe(gulp.dest('dist/js/'));
@@ -24,7 +24,7 @@ gulp.task('minify-html', () => {
   return gulp.src('src/index.html')
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(rename('index.html'))
-    .pipe(gulp.dest('dist/'));
+    .pipe(gulp.dest('./'));
 });
 
 gulp.task('sass', function () {
@@ -37,7 +37,6 @@ gulp.task('sass', function () {
 gulp.task('minify-css' , () => {
     return gulp.src('src/css/styles.css')
         .pipe(cleanCSS({compatibility: 'ie8'}))
-        .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('dist/css/'));
 });
 
@@ -49,7 +48,7 @@ done();
 function serve(done) {
 browserSync.init({
     server: {
-    baseDir: './dist/'
+    baseDir: './'
     }
 });
 done();
@@ -60,6 +59,6 @@ gulp.task('minify-js' ,gulp.series('concat-js','uglify-js'));
 gulp.task('minify-sass' , gulp.series('sass' ,'minify-css'));
 
   
-const watching = () => gulp.watch(['./src/sass/*.scss', './src/js/*.js', 'index.html','pattern.html'], gulp.series('minify-sass', 'minify-html', 'minify-js', reload));
+const watching = () => gulp.watch(['./src/sass/*.scss', './src/js/*.js', 'src/index.html','pattern.html'], gulp.series('minify-sass', 'minify-html', 'minify-js', reload));
 
 gulp.task('default', gulp.series(serve, watching));

@@ -1,5 +1,10 @@
+@font-face {
+  font-family: 'Roboto';
+  font-weight: normal;
+  src: url("../../assets/Roboto/Roboto-Regular.ttf") format("truetype"); }
+
 h2 {
-  Font-Family: 'Roboto Condensed', Sans-Serif;
+  Font-Family: 'Roboto', Sans-Serif;
   Font-Size: var(--font_size_L);
   color: #131313; }
 
@@ -18,25 +23,11 @@ p {
   color: #131313; }
 
 h1 span {
-  color: var(--background);
+  color: #fae16c;
   font-size: var(--font_size_XL); }
 
 em {
-  color: var(--emphasis); }
-
-:root {
-  --background: #fae16c;
-  --light_background: #fdeea6;
-  --textColor: #4A4A4A;
-  --emphasis: #FF6A7C;
-  --font_size_base: 1rem;
-  --font_size_L: calc(var(--font_size_base)*2.25);
-  --font_size_XL: calc(var(--font_size_base)*3);
-  --spacing_base: 1rem;
-  --spacing_L: calc(var(--spacing_base)*2); }
-
-.background_color {
-  background-color: var(--background); }
+  color: #FF6A7C; }
 
 .header {
   display: flex;
