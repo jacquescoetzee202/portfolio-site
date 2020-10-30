@@ -60,6 +60,6 @@ gulp.task('minify-js' ,gulp.series('concat-js','uglify-js'));
 gulp.task('minify-sass' , gulp.series('sass' ,'minify-css'));
 
   
-const watching = () => gulp.watch(['./scss/**/*.scss', './js/*.js', 'indexDev.html'], gulp.series('minify-sass', 'minify-html', 'minify-js', reload));
+const watching = () => gulp.watch(['./src/sass/*.scss', './src/js/*.js', 'index.html','pattern.html'], gulp.series('minify-sass', 'minify-html', 'minify-js', reload));
 
 gulp.task('default', gulp.series(serve, watching));
