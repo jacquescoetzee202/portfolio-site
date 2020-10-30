@@ -1,0 +1,32 @@
+
+h2 {
+    Font-Family: 'Roboto Condensed', Sans-Serif;
+    Font-Size: var(--font_size_L);
+    color: #131313;
+}
+
+p {
+    Font-Family: 'Cabin', Sans-Serif;
+    Font-Size: var(--font_size_base);
+    color: #353535;
+}
+
+.header__nav {
+    padding: var(--spacing-base);
+}
+
+.header__nav__link {
+    list-style-type: none;
+    Font-Family: 'Roboto Condensed', Sans-Serif;
+    Font-Size: var(--font_size_base);
+    color: #131313;
+}
+
+h1 span {
+    color: var(--background);
+    font-size: var(--font_size_XL);
+}
+
+em {
+    color: var(--emphasis);
+}

@@ -1,0 +1,23 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.header__nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.header__nav li {
+    padding: 0 var(--spacing_base) 0 var(--spacing_base);
+    display: flex;
+    align-content: center;
+}
+
+.header__nav a {
+    align-self: center;
+}
